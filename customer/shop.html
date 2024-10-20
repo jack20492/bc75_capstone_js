@@ -47,6 +47,7 @@
             <button
               class="cartButton"
               type="button"
+              onclick="openCart()"
               class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               <i class="fa-solid fa-cart-shopping text-4xl"></i>
@@ -117,6 +118,52 @@
           </div>
         </div>
       </nav>
+
+      <!-- Cart model -->
+      <div id="cartModal" class="hidden fixed inset-0">
+        <div class="flex items-center justify-center min-h-screen">
+          <div class="bg-white p-5 rounded-lg shadow-lg">
+            <br />
+            <br />
+            <br />
+            <br />
+            <h2 class="text-xl font-bold mb-4">Giỏ hàng của bạn</h2>
+            <table class="border-x">
+              <thead class="border-solid border-2 border-sky-500 border-x">
+                <tr>
+                  <th>Tên sản phẩm</th>
+                  <th>Số lượng</th>
+                  <th>Giá</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody
+                id="cartContent"
+                class="border-solid border-2 border-sky-500 border-x"
+              >
+                <!-- Nội dung giỏ hàng sẽ được thêm vào đây -->
+              </tbody>
+            </table>
+            <div class="mt-4 font-bold" id="totalAmount">Tổng tiền: $0</div>
+            <div
+              id="checkoutMessage"
+              class="mt-4 text-green-500 font-bold"
+            ></div>
+            <button
+              onclick="checkout()"
+              class="mt-4 bg-green-500 text-white px-4 py-2 rounded"
+            >
+              Thanh toán
+            </button>
+            <button
+              onclick="closeCart()"
+              class="mt-4 bg-red-500 text-white px-4 py-2 rounded"
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
     <!-- Header end -->
     <br />
